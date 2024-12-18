@@ -1,0 +1,28 @@
+[tokio_runtime]
+
+# It is better that the number be greater or equal to 512. It all depends on the workload
+# of blocking tasks - these are tasks that take more than 1ms of CPU time.
+[tokio_runtime.maximum_blocking_threads_quantity]
+value = 128
+
+# It is better that the number be equal to the number of threads that the hardware
+# can handle simultaneously.
+[tokio_runtime.worker_threads_quantity]
+value = 4
+
+# It is better that the number be greater or equal to 2MiB
+[tokio_runtime.worker_thread_stack_size]
+value = 2097152
+
+[logging]
+
+[logging.directory_path]
+value = "/_log"
+
+[logging.file_name_prefix]
+value = "log"
+
+[geyser]
+
+[geyser.grpc_url]
+value = "http://server_solana:10000"
