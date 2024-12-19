@@ -1,0 +1,8 @@
+# Not important. For developer:
+.vscode
+# Important. For application:
+docker-compose.override.yaml
+trade.toml
+parse_transaction.toml
+target
+/geyser_plugin/application/application/yellowstone-grpc-proto/src/bin/raw.rs

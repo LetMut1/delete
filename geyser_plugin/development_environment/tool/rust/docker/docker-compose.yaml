@@ -1,0 +1,18 @@
+services:
+    geyser_plugin_rust_stable_toolchain:
+        container_name: simo_geyser_plugin_rust_stable_toolchain
+        build:
+            context: ./service/rust_stable_toolchain/
+            dockerfile: dockerfile
+        environment:
+            USER: ${USER}
+        volumes:
+            - ./../../../../:/simo/geyser_plugin
+        working_dir: /simo/geyser_plugin
+        restart: always
+        tty: true
+        init: true
+networks:
+    default:
+        name: simo_geyser_plugin
+        driver: bridge

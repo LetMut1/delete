@@ -1,0 +1,11 @@
+FROM rust:1.80.0
+
+RUN \
+mkdir -p /simo && \
+rustup default stable && \
+rustup toolchain install nightly && \
+rustup component add --toolchain=stable \
+    clippy \
+    rust-src && \
+rustup component add --toolchain=nightly-x86_64-unknown-linux-gnu \
+    rustfmt
