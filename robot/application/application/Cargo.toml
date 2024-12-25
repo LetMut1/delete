@@ -1,0 +1,60 @@
+[package]
+name = "robot"
+version = "1.0.0"
+authors = ["Zimin Dmitriy <dmitriy@deepwaters.capital>"]
+rust-version = "1.80.0"
+resolver = "2"
+edition = "2021"
+
+[[bin]]
+name = "robot"
+
+[dependencies]
+ahash = { package = "ahash", version = "=0.8.11", default-features = true, features = [], optional = false }
+bincode = { package = "bincode", version = "1.3.3", default-features = true, features = [], optional = false }
+bs58 = { package = "bs58", version = "0.5.1", default-features = true, features = [], optional = false }
+bytes = { package = "bytes", version = "=1.7.1", default-features = true, features = [], optional = false }
+clap = { package = "clap", version = "=4.5.17", default-features = true, features = ["cargo"], optional = false }
+futures = { package = "futures", version = "0.3.24", default-features = true, features = [], optional = false }
+http = { package = "http", version = "=1.1.0", default-features = true, features = [], optional = false }
+http-body-util = { package = "http-body-util", version = "=0.1.2", default-features = true, features = [], optional = false }
+hyper = { package = "hyper", version = "=1.4.1", default-features = true, features = ["full"], optional = false }
+hyper_util = { package = "hyper-util", version = "=0.1.8", default-features = true, features = ["full"], optional = false }
+matchit = { package = "matchit", version = "=0.8.4", default-features = true, features = [], optional = false }
+serde_json = { package = "serde_json", version = "=1.0.128", default-features = true, features = [], optional = false }
+serde = { package = "serde", version = "1.0.145", default-features = true, features = [], optional = false }
+solana_rpc_client = { package = "solana-rpc-client", version = "=2.0.18", default-features = true, features = [], optional = false }
+solana_rpc_client-api = { package = "solana-rpc-client-api", version = "=2.0.18", default-features = true, features = [], optional = false }
+solana-sdk = { package = "solana-sdk", version = "=2.0.18", default-features = true, features = [], optional = false }
+solana-transaction-status = { package = "solana-transaction-status", version = "=2.0.18", default-features = true, features = [], optional = false }
+spl_token = { package = "spl-token", version = "4.0.0", default-features = true, features = ["no-entrypoint"], optional = false }
+tokio = { package = "tokio", version = "1.21.2", default-features = true, features = [], optional = false }
+toml = { package = "toml", version = "=0.8.19", default-features = true, features = [], optional = false }
+tracing = { package = "tracing", version = "=0.1.40", default-features = true, features = [], optional = false }
+tracing_appender = { package = "tracing-appender", version = "=0.2.3", default-features = true, features = [], optional = false }
+tracing_subscriber = { package = "tracing-subscriber", version = "=0.3.18", default-features = true, features = [], optional = false }
+uint = { package = "uint", version = "0.9.5", default-features = true, features = [], optional = false }
+yellowstone_grpc_client = { package = "yellowstone-grpc-client", path = "./../../../geyser_plugin/application/application/yellowstone-grpc-client", version = "3.0.0", features = [], optional = false }
+yellowstone_grpc_proto = { package = "yellowstone-grpc-proto", path = "./../../../geyser_plugin/application/application/yellowstone-grpc-proto", version = "3.0.0", default-features = true, features = ["plugin"], optional = false }
+
+[features]
+default = []
+logging_to_file = []
+
+[profile.release]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = true
+lto = "fat"
+panic = "unwind"
+incremental = false
+codegen-units = 16
+rpath = false
+
+[patch.crates-io.curve25519-dalek]
+git = "https://github.com/anza-xyz/curve25519-dalek.git"
+rev = "b500cdc2a920cd5bff9e2dd974d7b97349d61464"
+
+[lints.rust]
+unreachable_code = { level = "allow", priority = 0 }

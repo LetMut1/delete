@@ -1,0 +1,15 @@
+services:
+    robot_solana:
+        container_name: simo_robot_solana
+        build:
+            context: ./../../../../geyser_plugin/development_environment/resource/docker/service/solana
+            dockerfile: dockerfile
+        volumes:
+            - ./../../../../:/simo
+        restart: always
+        tty: true
+        init: true
+networks:
+    default:
+        external: true
+        name: simo_robot

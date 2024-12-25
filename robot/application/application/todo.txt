@@ -1,0 +1,15 @@
+Нужно ли перепровреять транзакцию на конфирмед? Либо же сразу из елоустоуна получать конфирмед транзакцию
+
+Посмотреть, где вместо выброса ошибки логически нужно просто завершить выполнение таски.
+
+Завершать таски, которые завершили торговлю. Убирать из хешмепа отслеживаемые аккаунты после завершения таска.
+
+Используется ли этот фи:
+https://github.com/raydium-io/raydium-amm/blob/d10a8e9fab9f7a3d87b4ae3891e3e4c24b75c041/program/src/state.rs#L487
+Здесь (судя по названию переменной, нет)
+https://github.com/raydium-io/raydium-amm/blob/d10a8e9fab9f7a3d87b4ae3891e3e4c24b75c041/program/src/processor.rs#L2393
+
+
+
+solana config set --url localhost
+cargo run --bin=robot -- --environment_configuration_file_path=/simo/robot/application/application/environment/run.toml run

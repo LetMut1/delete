@@ -1,0 +1,9 @@
+[solana_transaction_signature_registry]
+value = [
+    # Right
+    "2gMuTdGx6RaQKSrUqGib2kkNQ7XD71eMvA3fm8h5MY8qFSLoALQrnxiWo3YzCdaTSEstGd751HwD3LqVaxjX268t",
+    # Invalid
+    "2eNJSwrKod71iab1WG1RYUNHwbEjjDZVnbgXUMYHmDvH29FZcTEMg8DiZBMzPVh8BKLWEJ4M7TB1Hxrxnf1u9rMM",
+    # Failed
+    "4NoFxgLCDu9PKFHkr7k9MugcvSCmRQR3mULJqhdKZt1j2Cpc7C9H87QCcxL3Hehn9H9kLbbnHwn7oXd6dVq5LuVm"
+]

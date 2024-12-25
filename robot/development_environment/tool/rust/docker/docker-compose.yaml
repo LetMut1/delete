@@ -1,0 +1,20 @@
+services:
+    robot_rust_stable_toolchain:
+        container_name: simo_robot_rust_stable_toolchain
+        build:
+            context: ./service/rust_stable_toolchain/
+            dockerfile: dockerfile
+        environment:
+            USER: ${USER}
+        volumes:
+            - ./../../../../../:/simo
+        ports:
+        - 80:80
+        working_dir: /simo
+        restart: always
+        tty: true
+        init: true
+networks:
+    default:
+        name: simo_robot
+        driver: bridge

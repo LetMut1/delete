@@ -1,0 +1,50 @@
+[tokio_runtime]
+
+# It is better that the number be greater or equal to 512. It all depends on the workload
+# of blocking tasks - these are tasks that take more than 1ms of CPU time.
+[tokio_runtime.maximum_blocking_threads_quantity]
+value = 128
+
+# It is better that the number be equal to the number of threads that the hardware
+# can handle simultaneously.
+[tokio_runtime.worker_threads_quantity]
+value = 4
+
+# It is better that the number be greater or equal to 2MiB
+[tokio_runtime.worker_thread_stack_size]
+value = 2097152
+
+[http_server]
+
+[http_server.tcp_socket_address]
+value = "0.0.0.0:80"
+
+[logging]
+
+[logging.directory_path]
+value = "/_log"
+
+[logging.file_name_prefix]
+value = "log"
+
+[geyser]
+
+[geyser.grpc_url]
+value = "http://server_solana:10000"
+
+[trading]
+
+[traiding.private_key]
+value = [
+    152, 43, 116, 211, 207, 41, 220, 33,
+    193, 168, 118, 24, 176, 83, 206, 132,
+    47, 194, 2, 203, 186, 131, 197, 228,
+    156, 170, 154, 41, 56, 76, 159, 124,
+    18, 14, 247, 32, 210, 51, 102, 41,
+    43, 21, 12, 170, 166, 210, 195, 188,
+    60, 220, 210, 96, 136, 158, 6, 205,
+    189, 165, 112, 32, 200, 116, 164, 234
+]
+
+[traiding.initial_pc_amount]
+value = 12345
